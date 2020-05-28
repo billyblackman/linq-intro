@@ -9,14 +9,15 @@ namespace linq
         static void Main(string[] args)
         {
 
-            // // Find the words in the collection that start with the letter 'L'
-            // List<string> fruits = new List<string>() { "Lemon", "Apple", "Orange", "Lime", "Watermelon", "Loganberry" };
+            // Find the words in the collection that start with the letter 'L'
 
-            // IEnumerable<string> LFruits = fruits.Where(fruits => fruits.StartsWith("L"));
+            List<string> fruits = new List<string>() { "Lemon", "Apple", "Orange", "Lime", "Watermelon", "Loganberry" };
 
-            // List<string> LFruitsList = LFruits.ToList();
+            IEnumerable<string> LFruits = fruits.Where(fruits => fruits.StartsWith("L"));
 
-            // LFruitsList.ForEach(fruit => Console.WriteLine(fruit));
+            List<string> LFruitsList = LFruits.ToList();
+
+            LFruitsList.ForEach(fruit => Console.WriteLine(fruit));
 
             // Which of the following numbers are multiples of 4 or 6
 
@@ -43,6 +44,42 @@ namespace linq
             List<int> fourSixMultiplesList = fourSixMultiples.ToList();
 
             fourSixMultiplesList.ForEach(number => Console.WriteLine(number));
+
+        // Order these student names alphabetically, in descending order (Z to A)
+
+            List<string> names = new List<string>()
+            {
+                "Heather",
+                "James",
+                "Xavier",
+                "Michelle",
+                "Brian",
+                "Nina",
+                "Kathleen",
+                "Sophia",
+                "Amir",
+                "Douglas",
+                "Zarley",
+                "Beatrice",
+                "Theodora",
+                "William",
+                "Svetlana",
+                "Charisse",
+                "Yolanda",
+                "Gregorio",
+                "Jean-Paul",
+                "Evangelina",
+                "Viktor",
+                "Jacqueline",
+                "Francisco",
+                "Tre"
+            };
+
+            IOrderedEnumerable<string> orderedEnumerables = names.OrderByDescending(n => n);
+
+            List<string> descendingNamesList = orderedEnumerables.ToList();
+
+            descendingNamesList.ForEach(name => Console.WriteLine(name));
 
         }
     }
